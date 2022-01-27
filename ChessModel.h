@@ -1,4 +1,10 @@
-//: ChessModel.h
+/*: ChessModel.h
+* Author    : Andrei Hesketh
+* Date      : 26 Jan 2022
+*
+* This file defines the model attributes and behaviour.
+* The 'model' holds the data and defines the rules by which it is manipulated
+*/
 
 #ifndef CHESSMODEL_H
     #define CHESSMODEL_H
@@ -14,6 +20,8 @@ namespace ncm {
     private:
         int pos;
         string fen;
+        string p1Last;
+        string p2Last;
         char cell[DIMENSIONS*DIMENSIONS];
 
         int unwrapFen(string _fen);
@@ -22,19 +30,21 @@ namespace ncm {
 
     public:
         ChessModel() {
-            cout << "In Default Constructor" << endl;                   //DEBUG
             unwrapFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+            p1Last = "";
+            p2Last = "";
         }
         ChessModel(string _fen) {
-            cout << "In Parametrised Constructor" << endl;              //DEBUG
             unwrapFen(_fen);
+            p1Last = "";
+            p2Last = "";
         }
-        ~ChessModel() {
-            cout << "In Destructor" << endl;                            //DEBUG
-        }
+        ~ChessModel() {        }
 
         string getCells();
         int setCell(int _i, char _c);
+        string getp1Last() {return p1Last;}
+        string getp2Last() {return p2Last;}
     };
     
 }

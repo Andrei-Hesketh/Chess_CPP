@@ -1,4 +1,9 @@
-//: ChessModel.cpp
+/*: ChessModel.cpp
+* Author    : Andrei Hesketh
+* Date      : 26 Jan 2022
+*
+* This file holds the method bodies for the methods and functions as defined in the header.
+*/
 
 #include "ChessModel.h"
 
@@ -52,7 +57,6 @@ int ChessModel::setCell(char _c) {
 int ChessModel::setCell(int _i, char _c) {
     if (_i >= DIMENSIONS * DIMENSIONS)
         return 1;
-    cout << "New Cell: " << _c << endl;
 
     cell[_i] = _c;
     return 0;
@@ -62,7 +66,7 @@ int ChessModel::emptyCells(char _n) {
     int n = _n - '0';
 
     for (int i = 0; i < n; i++) {
-        setCell('0');
+        setCell('-');
     }
 
     return 0;

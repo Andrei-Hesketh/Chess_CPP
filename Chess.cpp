@@ -1,10 +1,12 @@
-//: Chess.cpp
-
-#include "ChessModel.h"
-#include <iostream>
-using namespace std;
+/*: Chess.cpp
+* Author    : Andrei Hesketh
+* Date      : 26 Jan 2022
+*
+* This file drives the program, and holds the main method and controller instance.
+*/
+#include "ChessController.h"
 
 int main() {
-    ncm::ChessModel cm = ncm::ChessModel();
-    cout << cm.getCells() << endl;
+    ncc::ChessController cc = ncc::ChessController();
+    cc.playGame();
 }
