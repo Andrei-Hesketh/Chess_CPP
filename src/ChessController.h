@@ -9,8 +9,9 @@
 #ifndef CHESSCONTROLLER_H
     #define CHESSCONTROLLER_H
 
-#include "ChessModel.h"
 #include "ChessViewer.h"
+#include "CommandScanner.h"
+#include "ChessModel.h"
 #include <string>
 #include <iostream>
 using namespace std;

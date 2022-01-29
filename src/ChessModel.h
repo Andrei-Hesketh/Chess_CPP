@@ -45,6 +45,7 @@ namespace ncm {
         int setCell(int _i, char _c);
         string getp1Last() {return p1Last;}
         string getp2Last() {return p2Last;}
+        
     };
     
 }

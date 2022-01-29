@@ -19,19 +19,16 @@ namespace ncv {
     private:
         int dim;
     public:
-        ChessViewer() {
-            dim = 8;
-        }
-        ChessViewer(int _dim) {
-            dim = _dim;
-        }
+        ChessViewer() : dim(8) {    }
+        ChessViewer(int _dim) : dim(_dim) {     }
         ~ChessViewer() {    }
 
+        void printMsg(int _in);
         void gameIO(string _fen);
         void p2LastMove(string _move);
         void p1LastMove(string _move);
 
-        string getInput();
+        string readInput();
     };
 }
 

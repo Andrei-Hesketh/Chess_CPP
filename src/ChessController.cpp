@@ -9,14 +9,18 @@
 #include <iostream>
 using namespace std;
 using namespace ncc;
+using namespace ncv;
 
 void ChessController::playGame() {
-    string input;
+    int input;
+    string msg;
     do {
         cv.gameIO(cm.getCells());
         cv.p1LastMove(cm.getp1Last());
         cv.p2LastMove(cm.getp2Last());
-        input = cv.getInput();
-        cout << input << endl << endl;
-    } while (input != "end");
+        do {
+            input = validate(cv.readInput());
+            cv.printMsg(input);
+        } while (input != ASM && input != ASQ);
+    } while (input != ASQ);
 }

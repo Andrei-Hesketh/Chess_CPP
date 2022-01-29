@@ -1,7 +1,8 @@
 CC = g++
 FLAGS = -g -Wall -s -pedantic-errors
 EXEC = Chess
-FILES = Chess.cpp ChessModel.cpp ChessController.cpp ChessViewer.cpp
+SRC = .\src\
+FILES = Chess.cpp CommandScanner.cpp ChessModel.cpp ChessViewer.cpp ChessController.cpp 
 
 $(EXEC): $(FILES)
-	$(CC) $(FLAGS) -o $(EXEC) $(FILES)
+	$(CC) $(FLAGS) -o $(EXEC) $(SRC)$(FILES)

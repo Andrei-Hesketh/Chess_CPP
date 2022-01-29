@@ -39,16 +39,41 @@ void ChessViewer::p2LastMove(string _move) {
 
 void ChessViewer::p1LastMove(string _move) {
     if (_move == "") {
-        cout << "move: e.g. e7 e5\nQuit: end\nHelp: help" << endl;
+        cout << "move: e.g. e7 e5\nQuit: quit\nHelp: help" << endl;
         return;
     }
     cout << _move << endl;
 }
 
-string ChessViewer::getInput() {
+void ChessViewer::printMsg(int _in) {
+    string msg;
+    switch (_in) {
+    case 1:
+        //TODO: Model Movement
+        msg = "Read Move Command";
+        break;
+    case 2:
+        //TODO: WRITE HELP MENU
+        msg = "Read Help Command";
+        break;
+    case 3:
+        msg = "Read Quit Command";
+        break;
+    case 4:
+        msg = "Error: Invalid Input. type 'help' for help.";
+        break;
+    default:
+        msg = "Unexpect failure: Not Accepting State. Try Again";
+        break;
+    }
+    cout << msg << endl;
+}
+
+string ChessViewer::readInput() {
     string tempIn;
     cout << "> ";
-    cin >> tempIn;
+    getline(cin, tempIn);
 
     return tempIn;
 }
+
